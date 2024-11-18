@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sample Quarto Website",
+    "section": "",
+    "text": "Setting a quarto website, publishing it using github-pages and setting up github actions is unnecessarily tedious tasks. This template repository makes it easier to setup one."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "A sample website setup using Quarto and published on Github pages."
+  }
+]
