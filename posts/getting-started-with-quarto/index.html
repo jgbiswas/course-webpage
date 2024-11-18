@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Anand">
+<meta name="dcterms.date" content="2024-11-18">
 
-<title>Sample Quarto Website</title>
+<title>Getting Started with Quarto website – Sample Quarto Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,67 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,7 +114,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Sample Quarto Website</span>
     </a>
   </div>
@@ -149,11 +125,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -168,21 +144,47 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="maps">maps <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-up-fork-the-template-repository" id="toc-setting-up-fork-the-template-repository" class="nav-link active" data-scroll-target="#setting-up-fork-the-template-repository">Setting Up: Fork the template repository</a></li>
+  <li><a href="#clone-the-repository" id="toc-clone-the-repository" class="nav-link" data-scroll-target="#clone-the-repository">Clone the Repository</a></li>
+  <li><a href="#customize-site-title" id="toc-customize-site-title" class="nav-link" data-scroll-target="#customize-site-title">Customize site title</a></li>
+  <li><a href="#create-new-pages" id="toc-create-new-pages" class="nav-link" data-scroll-target="#create-new-pages">Create new pages</a></li>
+  <li><a href="#adding-blog-posts" id="toc-adding-blog-posts" class="nav-link" data-scroll-target="#adding-blog-posts">Adding blog posts</a></li>
+  <li><a href="#share-your-website" id="toc-share-your-website" class="nav-link" data-scroll-target="#share-your-website">Share your website!</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sample Quarto Website</h1>
-</div>
+<h1 class="title">Getting Started with Quarto website</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Quarto</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Anand </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 18, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -192,84 +194,76 @@ window.Quarto = {
 </header>
 
 
-<p>This is a sample quarto website listing all the blog posts.</p>
+<p>This post explains how to setup a website quarto, customizing it and adding new content to it.</p>
+<section id="setting-up-fork-the-template-repository" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-fork-the-template-repository">Setting Up: Fork the template repository</h2>
+<p>The first step is to fork the <a href="https://github.com/anandology/quarto-website-template">quarto-website-template</a> repository.</p>
+<ul>
+<li>Go to the <a href="https://github.com/anandology/quarto-website-template">repository page</a> and click on the <em>Fork</em> button</li>
+<li>Select a name for your repository</li>
+<li>Write a description for your repository</li>
+<li>Make sure you uncheck the checkbox <em>Copy the main branch only</em></li>
+<li>And click on <em>Create Fork</em> button</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fork-repo.png" class="border img-fluid figure-img"></p>
+<figcaption>Fork the template repository</figcaption>
+</figure>
+</div>
+<p>After this step, you’ll have your own repository with a copy of the template.</p>
+<p>The website will be automatically published whenever you push any changes to the repository.</p>
+<p>The website will be live at URL <code>https://&lt;your-github-username&gt;.github.io/&lt;repo-name&gt;</code>.</p>
+</section>
+<section id="clone-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repository">Clone the Repository</h2>
+<p>Clone the repository to your computer so that you can make changes to it.</p>
+<p>If you wish you can skip this step and make changes directly from github.com web interface.</p>
+</section>
+<section id="customize-site-title" class="level2">
+<h2 class="anchored" data-anchor-id="customize-site-title">Customize site title</h2>
+<p>Edit the <code>_quarto.yml</code> file and update the <code>title</code> field in the <code>website</code> section.</p>
+<p>Commit your changes and push them. The website will be live with the new changes in a minute or two.</p>
+</section>
+<section id="create-new-pages" class="level2">
+<h2 class="anchored" data-anchor-id="create-new-pages">Create new pages</h2>
+<p>Add a new file <code>hello.qmd</code> (or whatever name that you would like to use). Add the require content.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>hello.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="hello.qmd"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Hello</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Hello, world!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you wish to include that page in the top navigation, add that to navbar.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sample Quarto Website"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">text</span><span class="kw">:</span><span class="at"> Home</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> hello.qmd</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> about.qmd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commit &amp; push you changes and wait for a minute to see your changes.</p>
+</section>
+<section id="adding-blog-posts" class="level2">
+<h2 class="anchored" data-anchor-id="adding-blog-posts">Adding blog posts</h2>
+<p>The blog posts are in <code>/posts/</code> directory. There is one directory for every post and the content of the post is in a file <code>index.qmd</code> in the post directory. A directory is used for a post instead of a single qmd file so that all the supplimentary files like images etc. could be grouped along with the post.</p>
+<p>The easiest way to add a new post is to duplicate one of the posts (the while directory for a post), rename it to the name that you want and modify the content.</p>
+</section>
+<section id="share-your-website" class="level2">
+<h2 class="anchored" data-anchor-id="share-your-website">Share your website!</h2>
+<p>Your website is live now! Share it with your friends!</p>
+<p>Checkout <a href="https://quarto.org/docs/guide/">Quarto Documentation</a> for more help.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Quarto" data-listing-date-sort="1731888000000" data-listing-file-modified-sort="1731919294114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="371">
-<div class="thumbnail">
-<p><a href="./posts/getting-started-with-quarto/index.html" class="no-external"></a></p><a href="./posts/getting-started-with-quarto/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/getting-started-with-quarto/fork-repo.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/getting-started-with-quarto/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/getting-started-with-quarto/index.html" class="no-external">Getting Started with Quarto website</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/getting-started-with-quarto/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/getting-started-with-quarto/index.html" class="no-external">This post explains how to setup a website quarto, customizing it and adding new content to it.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/getting-started-with-quarto/index.html" class="no-external">
-<div class="listing-date">
-Nov 18, 2024
-</div>
-<div class="listing-author">
-Anand
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="maps" data-listing-date-sort="1731801600000" data-listing-file-modified-sort="1731919294114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="3">
-<div class="thumbnail">
-<p><a href="./posts/hello-world/index.html" class="no-external"></a></p><a href="./posts/hello-world/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/hello-world/map.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/hello-world/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/hello-world/index.html" class="no-external">Hello, world!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/hello-world/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
-maps
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/hello-world/index.html" class="no-external">Sample blog post!</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/hello-world/index.html" class="no-external">
-<div class="listing-date">
-Nov 17, 2024
-</div>
-<div class="listing-author">
-Anand
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
